@@ -99,11 +99,6 @@ class MsalAuthHandler(private val msal: MsalAuth) : MethodChannel.MethodCallHand
      * @param result the result of the method call.
      */
     private fun createSingleAccountPca(configFile: File, result: MethodChannel.Result) {
-        if (msal.isPcaInitialized() && msal.getAccountMode() == AccountMode.SINGLE) {
-            result.success(true)
-            return
-        }
-
         SingleAccountPublicClientApplication.createSingleAccountPublicClientApplication(
             msal.context,
             configFile,
@@ -118,11 +113,6 @@ class MsalAuthHandler(private val msal: MsalAuth) : MethodChannel.MethodCallHand
      * @param result the result of the method call.
      */
     private fun createMultipleAccountPca(configFile: File, result: MethodChannel.Result) {
-        if (msal.isPcaInitialized() && msal.getAccountMode() == AccountMode.MULTIPLE) {
-            result.success(true)
-            return
-        }
-
         MultipleAccountPublicClientApplication.createMultipleAccountPublicClientApplication(
             msal.context,
             configFile,
