@@ -25,6 +25,8 @@ final class Utils {
         ..addAll({
           'client_id': clientId,
           'redirect_uri': androidConfig.redirectUri,
+          'authorization_user_agent': androidConfig.authorizationUserAgent,
+          'authorities': androidConfig.authorities,
         });
 
       arguments.addAll({'config': config});

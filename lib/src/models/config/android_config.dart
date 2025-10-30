@@ -7,8 +7,14 @@ class AndroidConfig {
   /// in Azure portal.
   final String redirectUri;
 
+  final String authorizationUserAgent;
+
+  final List<Map<String, dynamic>> authorities;
+
   AndroidConfig({
     required this.configFilePath,
     required this.redirectUri,
+    required this.authorizationUserAgent,
+    required this.authorities,
   });
 }
